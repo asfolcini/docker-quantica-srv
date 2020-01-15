@@ -1,0 +1,22 @@
+#!/usr/bin/with-contenv bash
+
+chmod 755 /bin/quantica /bin/qexec
+
+
+# copy config files
+if [ -d "/config/quantica" ]; then  
+  echo "Keeping volume files..."
+else
+  echo "Loading from defaults..."
+	cd /quantica
+	mv quantica /config/
+fi
+
+if [ $(find /config/www -type f | wc -l) -eq 0 ]; then
+	cd /quantica
+	mv www /config/
+fi
+
+# perform a system check
+cd /
+quantica -ts quantica.SystemCheck -e CHECK

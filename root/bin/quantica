@@ -1,0 +1,11 @@
+#!/bin/bash
+
+JAVA=`which java`
+LOG4J=-Dlog4j.configuration=file:/config/quantica/config/log4j.properties
+QUANTICA_JAR=/app/QUANTiCA/*
+QUANTICA_REPO=/config/quantica/repository/*
+QUANTICA_CONFIG=/config/quantica/config/
+CLASSPATH=$QUANTICA_CONFIG:.:$QUANTICA_JAR:$QUANTICA_REPO
+MAIN=quantica.Quantica
+
+$JAVA $LOG4J -cp $CLASSPATH $MAIN $1 $2 $3 $4 $5 $6 $7 $8 $9
