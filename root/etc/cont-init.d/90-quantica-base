@@ -19,4 +19,4 @@ fi
 
 # perform a system check
 cd /
-quantica -ts quantica.SystemCheck -e CHECK
+#quantica -ts quantica.SystemCheck -e CHECK
