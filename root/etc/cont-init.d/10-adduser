@@ -10,4 +10,4 @@ chown abc:abc /app
 chown abc:abc /config
 chown abc:abc /defaults
 
-echo "alias ll='ls -la'" > /root/.bashrc
+echo "alias ll='ls -la'" > /root/.profile
