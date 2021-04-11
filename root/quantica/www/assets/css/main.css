@@ -1,0 +1,82 @@
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1rem;
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 4px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+a {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease; 
+}
+a:hover {
+    text-decoration: none !important; 
+}
+
+.navbar {
+    border-bottom: 1px solid gray !important;
+}
+
+/* sandstone fontsize fix & tablist background color fix */
+.breadcrumb, .dropdown-menu .dropdown-item, .nav-pills .nav-link, .nav-tabs .nav-link, .navbar .nav-link, .pagination, .sandstone, .tooltip {
+    font-size: 14px;
+    background-color: inherit;
+}
+/* --------------------- */
+
+
+.sideMenuToggler {
+    margin-top: 12px;
+    margin-left: 6px;
+}
+
+.nav-link.active{
+    font-weight: bold;
+}
+
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: relative; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+
+.card{
+    margin: 2px 2px 2px 2px;
+    min-height: 100%;
+}
+
+.card p {
+    margin-bottom: 0px;
+}
+
+.card-line{
+    height: 3px;
+}
+
+.error404 {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon_over:hover:after, .icon_over:hover:before {
+    filter: brightness(0.5);
+}
