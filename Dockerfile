@@ -19,5 +19,4 @@ VOLUME ["/config"]
 ## Expose http & https
 EXPOSE 80 8081 443 9000
 
-CMD ["/usr/bin/java", "-cp","/app/QUANTiCA/quantica-core-api.jar:/config/quantica/config","-Dloader.main=quantica.api
-.QuanticaAPI", "org.springframework.boot.loader.PropertiesLauncher"]
+CMD ["/usr/bin/java","-cp","/app/QUANTiCA/quantica-core-api.jar:/config/quantica/config", "-Dloader.main=quantica.api.QuanticaAPI","org.springframework.boot.loader.PropertiesLauncher"]
