@@ -11,7 +11,7 @@ RUN apk update && apk add openjdk8 && rm -rf /var/lib/apt/lists/*
 
 
 COPY root/ /
-RUN dos2unix /etc/cont-init.d/* && dos2unix /bin/quantica && dos2unix /bin/qexec && dos2unix /quantica/quantica/config/quantica.properties && dos2unix /quantica/quantica/config/log4j.properties
+RUN dos2unix /etc/cont-init.d/* && dos2unix /bin/quantica && dos2unix /bin/qexec && dos2unix /quantica/quantica/config/quantica.properties && dos2unix /quantica/quantica/config/log4j.xml
 
 
 VOLUME ["/config"]
