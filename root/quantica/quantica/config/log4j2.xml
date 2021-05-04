@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <Properties>
+    <Property name="filename">/config/log/quantica/quanticalog-$${ctx:runID}.log</Property>
+  </Properties>
+  <ThresholdFilter level="debug"/>
+  
+  <Appenders>
+	<Null name="DEVNULL" />
+    
+	<Console name="STDOUT" target="SYSTEM_OUT">
+      <PatternLayout pattern="[%X{runID}] %d [%p] %c [%t] - %m%n"/>
+    </Console>
+	
+	<Routing name="Routing" >
+	  <Routes pattern="$${ctx:runID}">	
+		<Route>
+			<RollingFile name="Quantica-${ctx:runID}" fileName="${filename}" filePattern="/config/log/quantica/quantica-${ctx:runID}.%i.log.gz">
+				<PatternLayout>
+					<pattern>%d [%p] - %m%n</pattern>
+				</PatternLayout>
+				<SizeBasedTriggeringPolicy size="1 MB" />
+			</RollingFile>
+		</Route>	
+		<Route ref="DEVNULL" key="${ctx:runID}"/>
+	  </Routes>
+	</Routing>	
+	
+  </Appenders>
+  
+  <Loggers>
+    <Root level="trace">      
+      <AppenderRef ref="STDOUT" level="INFO"/>
+	  <AppenderRef ref="Routing"/>
+	</Root>
+  </Loggers>
+
+
+  
+</Configuration>
