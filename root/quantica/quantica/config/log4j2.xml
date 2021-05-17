@@ -19,7 +19,7 @@
 				<PatternLayout>
 					<pattern>%d [%p] - %m%n</pattern>
 				</PatternLayout>
-				<SizeBasedTriggeringPolicy size="1 MB" />
+				<SizeBasedTriggeringPolicy size="10 MB" />
 			</RollingFile>
 		</Route>	
 		<Route ref="DEVNULL" key="${ctx:runID}"/>
