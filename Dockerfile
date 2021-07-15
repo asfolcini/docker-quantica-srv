@@ -7,7 +7,7 @@ ENV http_proxy ''
 ENV https_proxy ''
 
 ## Install Java and cleanup after in the same layer
-RUN apk update && apk add openjdk8 python3 py3-pip && rm -rf /var/lib/apt/lists/*
+RUN apk update && apk add --update-cache openjdk8 python python-dev py-pip build-base && rm -rf /var/lib/apt/lists/*
 
 ## Install python modules
 RUN pip install yfinance==0.1.62 mysql-connector
