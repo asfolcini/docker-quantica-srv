@@ -10,11 +10,22 @@ ENV https_proxy ''
 RUN apk update && apk add --update-cache openjdk8 && rm -rf /var/lib/apt/lists/*
 
 ## Install Python
-RUN apk add --update-cache python3 py3-pip
+RUN apk add --no-cache --update \
+    python3 py3-pip python3-dev gcc \
+    gfortran musl-dev g++ \
+    libffi-dev openssl-dev \
+    libxml2 libxml2-dev \
+    libxslt libxslt-dev \
+    libjpeg-turbo-dev zlib-dev
+
 
 ## Install python modules
-RUN pip install mysql-connector
-RUN pip install yfinance
+RUN pip install --upgrade cython
+
+RUN pip3 install --no-cache-dir --upgrade pip && \
+    pip3 install --no-cache-dir mysql-connector && \
+    pip3 install --no-cache-dir yfinance 
+
 
 COPY root/ /
 RUN dos2unix /etc/cont-init.d/* && dos2unix /bin/quantica && dos2unix /bin/qexec && dos2unix /quantica/quantica/config/quantica.properties && dos2unix /quantica/quantica/config/log4j2.xml
