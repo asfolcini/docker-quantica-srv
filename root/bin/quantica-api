@@ -1,0 +1,11 @@
+#!/bin/bash
+
+JAVA=`which java`
+LOG4J_CFG=-Dlog4j.configurationFile=file:/config/quantica/config/log4j2.xml
+LOG4J_TC=-Dlog4j2.isThreadContextMapInheritable=true
+QUANTICA_JAR=/app/QUANTiCA/quantica-core-api.jar
+QUANTICA_CONFIG=/config/quantica/config/
+CLASSPATH=$QUANTICA_CONFIG:.:$QUANTICA_JAR
+MAIN=-Dloader.main=quantica.api.QuanticaAPI
+
+$JAVA $LOG4J_CFG $LOG4J_TC -cp $CLASSPATH $MAIN org.springframework.boot.loader.PropertiesLauncher
