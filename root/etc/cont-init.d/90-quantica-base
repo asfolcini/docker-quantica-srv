@@ -2,6 +2,8 @@
 
 chmod 755 /bin/quantica /bin/qexec
 
+chmod 755 /etc/periodic/daily/quotes_update.sh
+mkdir /config/log/quotes
 
 # copy config files
 if [ -d "/config/quantica" ]; then  
