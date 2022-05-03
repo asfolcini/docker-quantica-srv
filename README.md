@@ -1,20 +1,20 @@
-# docker-quantica
-QUANTiCA docker image
+# docker-quantica-srv
+QUANTiCA Server docker image
 
 
 ### BUILD
 <pre>
-docker build -t asfolcini/quantica .
+docker build -t asfolcini/quantica-srv .
 </pre>
 
 ### RUN
 <pre>
-docker run --name=quantica -e PUID=1000 -e PGID=1000 -e TZ=Europe/London -v c:/temp/tmp:/config -p 80:80 asfolcini/quantica
+docker run --name=quantica-srv -e PUID=1000 -e PGID=1000 -e TZ=Europe/London -v c:/temp/tmp:/config -p 8081:8081 asfolcini/quantica-srv
 </pre>
 
 ### EXEC
 <pre>
-docker exec -it quantica /bin/bash
+docker exec -it quantica-srv /bin/bash
 </pre>
 
 ### TEST
