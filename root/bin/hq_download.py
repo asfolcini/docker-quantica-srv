@@ -8,7 +8,7 @@ print("-----------------------------------------------------------------------")
 
 # Define a function `plus()`
 def getTickers():
-    cnx = mysql.connector.connect(user='quantica_usr',password='quantica_psw', database='db-quantica-core',use_pure=1)
+    cnx = mysql.connector.connect(user='quantica_usr',password='quantica_psw', host='quantica-db:3306',database='db-quantica-core',use_pure=1)
     cursor = cnx.cursor()
 
     query = ("SELECT symbol,description FROM data_securities WHERE timeframe='1day'");

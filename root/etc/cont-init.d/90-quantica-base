@@ -12,11 +12,6 @@ else
 	mv quantica /config/
 fi
 
-if [ $(find /config/www -type f | wc -l) -eq 0 ]; then
-	cd /quantica
-	mv www /config/
-fi
-
 # perform a system check
 cd /
 quantica -ts quantica.SystemCheck -e CHECK
