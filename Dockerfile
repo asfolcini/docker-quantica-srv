@@ -3,7 +3,7 @@ FROM ghcr.io/linuxserver/baseimage-alpine:3.14
 LABEL maintainer="Alberto Sfolcini <a.sfolcini@gmail.com>"
 
 ## Install Java and cleanup after in the same layer
-RUN apk update && apk add --update-cache openjdk8 && rm -rf /var/lib/apt/lists/*
+RUN apk update && apk add --update-cache openjdk8 && apk del nginx php && rm -rf /var/lib/apt/lists/*
 
 ## Install Python
 RUN apk add --no-cache --update \
