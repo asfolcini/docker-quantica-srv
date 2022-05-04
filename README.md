@@ -20,8 +20,8 @@ docker exec -it quantica-srv /bin/bash
 ### TEST
 Enter inside the container and execute this command:
 <pre>
-root@646bcb881f68:/# quantica -ts quantica.SystemCheck
-
+root@quantica-srv:/# quantica -ts quantica.SystemCheck
+root@quantica-srv:/#
                 ___
                /,_ \    _,
                |/ )/   / |            Q U A N T i C A
@@ -31,7 +31,8 @@ root@646bcb881f68:/# quantica -ts quantica.SystemCheck
                \  ~=-   /,            MIT License,  http://getquantica.com
         ^~^~^~^~^~^~^~^~^~^~^~^~
 
-QUANTiCA ENGiNe - BUILD Version 2.0ms02 fired up!
+QUANTiCA ENGiNe - BUILD Version 2.0ms05 fired up!
+Settings loaded from ClassPath quantica.properties
 Loading Trading System quantica.SystemCheck.. .
 
 ------------------------------------------------------------------------------------------
@@ -44,7 +45,7 @@ Loading Trading System quantica.SystemCheck.. .
  [ ok ] Locale             : en_US
  [ ok ] Language           : ENG
  [ ok ] Timestamp format   : yyyy-MM-dd HH:mm:ss.SSS
- [ ok ] Test today date    : 2020-01-15 16:17:54.997
+ [ ok ] Test today date    : 2022-05-04 16:09:02.357
 ------------------------------------------------------------------------------------------
  REPOSITORIES
 ------------------------------------------------------------------------------------------
@@ -54,25 +55,25 @@ Loading Trading System quantica.SystemCheck.. .
 ------------------------------------------------------------------------------------------
  NATS Message Broker
 ------------------------------------------------------------------------------------------
- [ ok ]  NATS Server 1     : nats://172.17.0.3:4222
- .  [ ok ]  Test connection to nats://172.17.0.3:4222: CONNECTED
+ [ ok ]  NATS Server 1     : nats://nats-srv:4222
+ .  [ ok ]  Test connection to nats://nats-srv:4222: CONNECTED
  [Warn]  NATS Server 2     :
  [Warn]  NATS Server 3     :
  [Warn]  NATS Server 4     :
 ------------------------------------------------------------------------------------------
  PERSISTENCE LAYER ( MariaDB )
 ------------------------------------------------------------------------------------------
- [ ok ]  DB IP:Port        : 172.17.0.5:3306
+ [ ok ]  DB IP:Port        : quantica-db:3306
  [ ok ]  DB Name/ID        : db-quantica-core
  [ ok ]  DB Username       : quantica_usr
  [ ok ]  DB Password       : ***********
  [ ok ]  Test connection   : CONNECTED
 ------------------------------------------------------------------------------------------
- REPORT DASHBOARDS
+ API KEY
 ------------------------------------------------------------------------------------------
- [ ok ]  Metabase Url      : http://172.17.0.6:3000/public/dashboard/cef0c92a-5605-44ce-906f-1d455ce915a3
+ [ ok ]  API KEY is setted.
 ------------------------------------------------------------------------------------------
  TEST ENDED.
 ------------------------------------------------------------------------------------------
-root@646bcb881f68:/#
+root@quantica-srv:/# 
 </pre>
