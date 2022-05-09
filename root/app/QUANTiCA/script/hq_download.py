@@ -38,7 +38,7 @@ for t in tickers:
   print("Downloading ticker "+t+".. .")
   hq = yf.Ticker(t)
   # get historical market data
-  ofile = "./historical/"+t+".csv"
+  ofile = "/quantica/quantica/resources/"+t+".csv"
   hq.history(period="max").to_csv(ofile)
   try:
     f1 = open(ofile, "r")
