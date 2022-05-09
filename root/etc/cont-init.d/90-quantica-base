@@ -16,3 +16,6 @@ fi
 # perform a system check
 cd /
 quantica -ts quantica.SystemCheck -e CHECK
+
+# update quotes
+run-parts /etc/periodic/daily/
